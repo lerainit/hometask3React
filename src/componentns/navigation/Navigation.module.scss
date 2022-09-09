@@ -13,14 +13,14 @@
   }
   .cart{
     width: 40px;
-    height: 40px;
-    margin-top: 20px;
+    height: 30px;
+    margin-top: 7px;
     border-radius: 7px;
   }
   .favorite_img{
     width: 40px;
-    height: 40px;
-    margin-top: 20px;
+    height: 30px;
+margin-top: 7px;
     border-radius: 22px;
    
   }
@@ -28,18 +28,32 @@
     width: 500px;
     display: flex;
     color: cadetblue;
-    gap:7px;
+
+
   }
   .button_container{
     width: 200px;
     height: 70px;
+ 
   }
   .cart_link{
       text-decoration: none;
       color: cadetblue;
+      width: 250px;
+      height: 70px;
   }
   .fav_link{
       text-decoration: none;
       color: cadetblue;
+      width: 250px;
+      height: 70px;
+      
   }
-  
+  .cart_link h2{
+   font-size: 20px;
+   margin-top: -5px;
+ } 
+ .fav_link h2{
+   font-size: 20px;
+   margin-top: -5px;
+ }
