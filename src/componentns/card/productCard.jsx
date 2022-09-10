@@ -1,27 +1,27 @@
 import React  from 'react'
 import styles from './productCard.module.scss'
+import PropTypes from 'prop-types'
 
-
- const Card =(props) => {
+ const Card =({id,name,price,url,art,addFavoritesFunc,openModal,fill}) => {
 
    
         return(
             <>
             
             <ul>
-                <li><span>Name:</span>{props.name}</li>
-                <li><span>Price:</span>{props.price}</li>
-                <li><img className={styles.image} src={props.url}   alt = 'Product '/></li>
-                <li><span>Art:</span>{props.art}</li>
+                <li><span>Name:</span>{name}</li>
+                <li><span>Price:</span>{price}</li>
+                <li><img className={styles.image} src={url}   alt = 'Product '/></li>
+                <li><span>Art:</span>{art}</li>
 
-                <svg onClick = {props.addFavoritesFunc} version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg onClick = {addFavoritesFunc} version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="40.000000pt" height="26.000000pt" viewBox="0 0 1280.000000 1216.000000"
  preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
 <g transform="translate(0.000000,1216.000000) scale(0.100000,-0.100000)"
-fill={props.fill} stroke="none">
+fill={fill} stroke="none">
 <path d="M5890 10598 c-332 -755 -736 -1674 -898 -2043 -161 -368 -295 -671
 -297 -673 -2 -2 -308 -25 -682 -52 -373 -27 -1054 -76 -1513 -109 -459 -34
 -1087 -79 -1395 -101 -308 -22 -585 -43 -615 -46 l-54 -6 49 -47 c28 -25 336
@@ -35,7 +35,7 @@ fill={props.fill} stroke="none">
 1388 -620 1525 -56 138 -104 253 -108 258 -3 4 -278 -610 -610 -1365z"/>
 </g>
 </svg>
- <button  className={styles.addCart_btn} onClick = {() =>{props.openModal(props.id)}}>Add cart</button>
+ <button  className={styles.addCart_btn} onClick = {() =>{openModal(id)}}>Add cart</button>
             
             
             </ul>
@@ -45,8 +45,28 @@ fill={props.fill} stroke="none">
             </>
         )
     }
+
+    Card.propTypes  = {
+        name:PropTypes.string,
+        price:PropTypes.number,
+        url:PropTypes.string,
+        art:PropTypes.number,
+        addFavoritesFunc:PropTypes.func.isRequired,
+        openModal:PropTypes.func.isRequired,
+        id:PropTypes.number,
+        fill:PropTypes.string
+        
+        }
+        Card.defaultProps ={
+        
+            name:'Product name',
+            price:0,
+            url:'',
+            art:0,
+            id:-1,
+            fill:'#fff'
+        
+        }
+        
  export default Card; 
- //<button  className={styles.del_from_cart_btn} onClick = {() =>{
-                 
-                // props.setCartId(props.id)
-               //  props.openDeleteModal()}}>Delete from Cart</button>  
+ 

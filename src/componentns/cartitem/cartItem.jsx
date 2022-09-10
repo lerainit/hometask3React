@@ -1,24 +1,25 @@
 import React from 'react'
 import styles from './cartItem.module.scss'
+import PropTypes from 'prop-types'
 
-const CartItem = (props) => {
+const CartItem = ({name,price,url,art,index,setCartId,openDeleteModal}) => {
 
 
     return (
         <>
 
             <ul>
-                <li><span>Name:</span>{props.name}</li>
-                <li><span>Price:</span>{props.price}</li>
-                <li><img className={styles.image} src={props.url} alt='Product ' /></li>
-                <li><span>Art:</span>{props.art}</li>
+                <li><span>Name:</span>{name}</li>
+                <li><span>Price:</span>{price}</li>
+                <li><img className={styles.image} src={url} alt='Product ' /></li>
+                <li><span>Art:</span>{art}</li>
 
 
 
                 <button className={styles.del_from_cart_btn} onClick={() => {
 
-                    props.setCartId(props.index)
-                    props.openDeleteModal()
+                    setCartId(index)
+                    openDeleteModal()
                 }}>Delete from Cart</button>
             </ul>
 
@@ -27,6 +28,26 @@ const CartItem = (props) => {
         </>
     )
 }
+CartItem.propTypes  = {
+    name:PropTypes.string,
+    price:PropTypes.number,
+    url:PropTypes.string,
+    art:PropTypes.number,
+    deleteCartItem :PropTypes.func.isRequired,
+    openDeleteModal:PropTypes.func.isRequired,
+    id:PropTypes.number,
+    setCartId :PropTypes.func.isRequired
+    
+    }
+    CartItem.defaultProps ={
+    
+        name:'Product name',
+        price:0,
+        url:'',
+        art:0,
+        id:-1,
+        fill:'#fff'
+    
+    }
 export default CartItem;
 
-//<button  className={styles.deleteCart_btn} onClick = {() =>{props.deleteCartItem(props.id)}}>Delete item</button>

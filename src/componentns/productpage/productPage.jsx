@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../card/productCard'
+import PropTypes from 'prop-types'
 
 
 
@@ -13,8 +14,21 @@ return(
     </>
     )
     
-    
-    
-    }
+}
+ProductPage.propTypes={
+
+     addCards: PropTypes.number,
+   products:PropTypes.array.isRequired,
+   addFavoritesPage:PropTypes.number,
+   addFavoritesFunc:PropTypes.func.isRequired,
+   openModal:PropTypes.func.isRequired,
+   clearFavorites:PropTypes.func.isRequired
+   
+   }
+   ProductPage.defaultProps ={
+   addCards:0,
+   addFavoritesPage:0
+   
+   }
     export default ProductPage
    
