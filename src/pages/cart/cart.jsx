@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CartItem from '../cartitem/cartItem'
+import CartItem from '../../componentns/cartitem/cartItem'
 import PropTypes from 'prop-types'
 
 const CartPage = ({addCards,deleteCartItem,openDeleteModal,setCartId}) =>{

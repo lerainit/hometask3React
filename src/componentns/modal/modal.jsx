@@ -27,7 +27,7 @@ Modal.propTypes ={
   backgroundColor:PropTypes.string ,
   color:PropTypes.string ,
   handleClick:PropTypes.func.isRequired,
-  addCart:PropTypes.func.isRequired 
+  modalFunc:PropTypes.func.isRequired 
   
   }
   

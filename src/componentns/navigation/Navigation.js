@@ -1,6 +1,8 @@
+
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import BackButton from '../backbutton/backbutton'
+import PropTypes from 'prop-types'
 import styles from './Navigation.module.scss'
 
 
@@ -14,5 +16,13 @@ const Navigation = ({addCards,addFavoritesPage}) => {
 
 
             </div></header>)
+}
+Navigation.propTypes = {
+    addCards:PropTypes.number,
+    addFavorites:PropTypes.number
+}
+Navigation.defaultProps ={
+    addCards:0,
+    addFavorites:0
 }
 export default Navigation
