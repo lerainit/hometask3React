@@ -134,7 +134,3 @@ const App = () => {
 
 export default App
 
-//const dispatch = useDispatch()
-//const counter = useSelector(store =>store.counter)
-//p>{counter}</p>
-   //<button onClick={() =>{dispatch({type:'INCREMENT'})}}></button>
