@@ -82,7 +82,6 @@ const App = () => {
       products[index].addFavorites = true
       addFavoritesArr.push(products[index])
 
-      console.log(addFavoritesArr)
       localStorage.setItem('products', JSON.stringify(products))
       localStorage.setItem('addFavorites', JSON.stringify(addFavoritesArr))
 
