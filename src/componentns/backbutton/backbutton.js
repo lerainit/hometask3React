@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 const BackButton = () => {
     const navigate = useNavigate()
-    const historyIndex = window.history.state?.idx;
+   const historyIndex = window.history.state?.idx;
+
 
 
 if(historyIndex > 0 ){

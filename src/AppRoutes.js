@@ -10,7 +10,7 @@ const AppRoutes = ({products,openModal,addFavoritesFunc,addFavorites,deleteCartI
      
         <Routes>
             <Route path='/' element={   <ProductPage  products={products} openModal={openModal} addFavoritesFunc={addFavoritesFunc} ></ProductPage>} />
-           <Route path='/favorites' element={<FavoritesPage  addFavorites ={addFavorites}/>} />
+           <Route path='/favorites' element={<FavoritesPage openModal={openModal} addFavorites ={addFavorites}/>} />
          
            <Route path='/cart' element={<CartPage addCards={JSON.parse(localStorage.getItem('addCards'))} deleteCartItem ={deleteCartItem} openDeleteModal={openDeleteModal} setCartId={setCartId}  />}/>
            <Route path='*' element={<NotFoundPage />} />

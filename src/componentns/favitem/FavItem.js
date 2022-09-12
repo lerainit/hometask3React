@@ -3,7 +3,7 @@ import styles from './FavItem.module.scss'
 import  PropTypes from 'prop-types'
 
 
-const FavItem = ({name,price,url,art}) => {
+const FavItem = ({id,name,price,url,art,openModal}) => {
     return (
         <>
 
@@ -12,6 +12,7 @@ const FavItem = ({name,price,url,art}) => {
                 <li><span>Price:</span>{price}</li>
                 <li><img className={styles.image} src={url} alt='Product ' /></li>
                 <li><span>Art:</span>{art}</li>
+                <button  className={styles.addCart_btn} onClick = {() =>{openModal(id)}}>Add cart</button>
             </ul>
         </>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import FavItem from '../../componentns/favitem/FavItem'
 import PropTypes from 'prop-types'
 
-const FavoritesPage = ({addFavorites}) =>{
+const FavoritesPage = ({addFavorites,openModal}) =>{
 
 return(
   
@@ -10,7 +10,7 @@ return(
     
     <>
 
-{addFavorites.map(({id,name,price,art,url}) =><FavItem key={id}  id ={id}  name= {name} price ={price} art ={art} url={url} ></FavItem>)}
+{addFavorites.map(({id,name,price,art,url}) =><FavItem key={id}  id ={id}  name= {name} price ={price} art ={art} url={url} openModal={openModal} ></FavItem>)}
 
 </>   
     
