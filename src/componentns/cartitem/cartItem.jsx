@@ -7,7 +7,7 @@ const CartItem = ({name,price,url,art,index,setCartId,openDeleteModal}) => {
 
     return (
         <>
-
+<div className={styles.cart_item}>
             <ul>
                 <li><span>Name:</span>{name}</li>
                 <li><span>Price:</span>{price}</li>
@@ -16,13 +16,14 @@ const CartItem = ({name,price,url,art,index,setCartId,openDeleteModal}) => {
 
 
 
-                <button className={styles.del_from_cart_btn} onClick={() => {
+               
+            </ul>
+             <button className={styles.del_from_cart_btn} onClick={() => {
 
                     setCartId(index)
                     openDeleteModal()
-                }}>Delete from Cart</button>
-            </ul>
-
+                }}>X</button>
+</div>
 
 
         </>
@@ -50,4 +51,7 @@ CartItem.propTypes  = {
     
     }
 export default CartItem;
+
+
+
 
