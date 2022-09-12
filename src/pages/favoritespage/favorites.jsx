@@ -4,6 +4,12 @@ import PropTypes from 'prop-types'
 
 const FavoritesPage = ({addFavorites,openModal,addFavoritesFunc,products}) =>{
 
+if(addFavorites.length === 0){
+    return(<>
+   <h1>No items have been added</h1> 
+    </>)
+}
+else{
 return(
   
    
@@ -17,7 +23,7 @@ return(
     
    
 )
-
+}
 
 }
  FavoritesPage.propTypes ={

@@ -4,8 +4,10 @@ import CartItem from '../../componentns/cartitem/cartItem'
 import PropTypes from 'prop-types'
 
 const CartPage = ({addCards,deleteCartItem,openDeleteModal,setCartId}) =>{
-
-
+if(addCards.length === 0 ){
+    return(<> <h1>No items have been added</h1></>)
+}
+else{
 return(
 
 <>
@@ -15,7 +17,7 @@ return(
 </>
 
 )
-
+}
 }
 CartPage.propTypes  = {
     name:PropTypes.string,
