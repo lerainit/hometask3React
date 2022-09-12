@@ -1,3 +1,8 @@
+
+.cart_item{
+  display:flex;
+  align-items: center;
+}
 .image{
     width: 200px;
     height: 200px;
@@ -10,12 +15,14 @@
       
   }
   .del_from_cart_btn{
-    width: 80px;
+    width: 60px;
     height: 35px;
     background-color: tomato;
     border: 1px solid tomato;
     border-radius: 7px;
     margin-left: 5px;
     color: aliceblue;
+    font-weight: bold;
  
   }
+
