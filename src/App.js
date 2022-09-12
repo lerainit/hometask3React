@@ -51,7 +51,7 @@ const deleteCartItem = (elIndex) => {
 return newAddCardsArr
 
 })
-   
+setIsOpenDeleteModal(false)
   }
 
 const openModal = (id) => {
