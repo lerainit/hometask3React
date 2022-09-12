@@ -24,8 +24,7 @@ const App = () => {
   const [cardId, setCardId] = useState(null)
   const [index, setIndex] = useState(null)
 
-
-
+  
   useEffect(() => {
     if (!localStorage.getItem('products')) {
       (async () => {
@@ -42,9 +41,7 @@ const App = () => {
     }
   }, [])
 
-
- 
-   const deleteCartItem = (elIndex) => {
+const deleteCartItem = (elIndex) => {
 
   setAddCards(current =>{
     let addCardsArr = [...current]
@@ -57,8 +54,7 @@ return newAddCardsArr
    
   }
 
-
-  const openModal = (id) => {
+const openModal = (id) => {
 
     setIsOpenModal(true)
     setCardId(id)
@@ -66,7 +62,6 @@ return newAddCardsArr
     setButtonText('Add to  Cart')
 
   }
-
 
   const setCartId = (index) => {
     setIndex(index)
@@ -78,9 +73,7 @@ return newAddCardsArr
     setButtonText('Delete from Cart')
   }
 
-
- 
- const addtoFavorites = (id) => {
+const addtoFavorites = (id) => {
 
     const index = products.findIndex(el => id === el.id)
 
@@ -109,11 +102,10 @@ return addFavoritesArr
     }
   
     setProducts(products)
- 
 
   }
 
-  const addCart = (id) => {
+   const addCart = (id) => {
     setAddCards((current) => {
 
       let addCardsArr = [...current]
