@@ -74,27 +74,37 @@ const App = () => {
   }
 
 
-  const addtoFavorites = (id) => {
+ 
+ const addtoFavorites = (id) => {
 
     const index = products.findIndex(el => id === el.id)
- 
-      if (products[index].addFavorites === false) {
+
+    if (products[index].addFavorites === false) {
+
+   setFavorites(current =>{
+  let addFavoritesArr = [...current]
+    
       products[index].addFavorites = true
       addFavoritesArr.push(products[index])
-
       localStorage.setItem('products', JSON.stringify(products))
       localStorage.setItem('addFavorites', JSON.stringify(addFavoritesArr))
-
+return addFavoritesArr
+  })
     } else {
+      setFavorites(current =>{
+        let addFavoritesArr = [...current] 
       products[index].addFavorites = false
       let newAddFavoritesArr = addFavoritesArr.filter(({ id }) => id !== products[index].id)
 
       localStorage.setItem('products', JSON.stringify(products))
       localStorage.setItem('addFavorites', JSON.stringify(newAddFavoritesArr))
-
+     return newAddFavoritesArr
+    
+    })
     }
+  
     setProducts(products)
-    setFavorites(JSON.parse(localStorage.getItem('addFavorites')))
+ 
 
   }
 
