@@ -43,15 +43,20 @@ const App = () => {
   }, [])
 
 
-  const deleteCartItem = (elIndex) => {
-  
+ 
+   const deleteCartItem = (elIndex) => {
+
+  setAddCards(current =>{
+    let addCardsArr = [...current]
     let newAddCardsArr = addCardsArr.filter((el, index) => elIndex !== index)
 
     localStorage.setItem('addCards', JSON.stringify(newAddCardsArr))
+return newAddCardsArr
 
-    return setAddCards(JSON.parse(localStorage.getItem('addCards')))
-
+})
+   
   }
+
 
   const openModal = (id) => {
 
